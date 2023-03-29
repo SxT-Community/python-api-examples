@@ -12,12 +12,12 @@ These scripts were created using Python version 3.11.2 but any version of Python
 
 `pip install -r requirements.txt`
 
-## Generate Keys, Register User ID, & Authenticate with Space & Time 
-
 3. Create and populate your .env file
 `cp sample.env .env`
 
 Open `.env` file and update the variable values as necessary. 
+
+## Generate Keys, Register User ID, & Authenticate with Space & Time 
 
 ### 1. Generate Keys 
 Platform authentication (i.e. proving your identity) is based on public key cryptography, meaning you need a pair of public/private keys. 
