@@ -109,4 +109,12 @@ So that we can simply run:
 python query.py $AT
 ```
 
+### 4. Create a table 
 
+[https://docs.spaceandtime.io/reference/configure-resources-ddl](https://docs.spaceandtime.io/reference/configure-resources-ddl)
+
+This is a primitive example of creating a table. Please note, this assumes that you've already created a SCHEMA to put your table in. It's also worth noting, that two new variables have been added to `.env` for this request: `BISCUIT` and `BISCUIT_PUBLIC_KEY`. 
+
+```bash
+python create.py $AT
+```
