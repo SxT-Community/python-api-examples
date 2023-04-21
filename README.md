@@ -1,7 +1,10 @@
 # Example of using Python to interact with the Space and Time API 
 
 > **Note**
+
 > As of this writing the SxT API is accessible through the [Controlled Release](https://docs.spaceandtime.io/docs/controlled-release) program. In order to interact with our API, you will need an org/join code and the API URL which can be obtained though the link above. 
+
+**Google Colab Notebook is still in testing and may behave in unexpected ways**
 
 ## Setup & Config
 1. Setup Python
