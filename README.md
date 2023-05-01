@@ -19,7 +19,7 @@ Platform authentication (i.e. proving your identity) is based on public key cryp
 
 While Space and Time supports multiple different key algorithms, we're going to keep it simple and focus on two:
 
-- ED25519
+- ed25519
 - secp256k1 (Ethereum Accounts/Wallets)
 
 > **Note** 
@@ -36,12 +36,12 @@ Ethereum based keypair:
 private key: 0xYOUR_PRIVATE_KEY_HERE
 public key: 0xYOUR_PUBLIC_KEY_HERE
 
-ED25519 based keypair:
+ed25519 based keypair:
 private key: YOUR_PRIVATE_KEY_HERE=
 public key: YOUR_PUBLIC_KEY_HERE=
 ```
 
-You only need to select one keypair and we currently recommend using ED25519. You can always add more keys to your account but for now, we'll just need one pair. 
+You only need to select one keypair and we currently recommend using ed25519. You can always add more keys to your account but for now, we'll just need one pair. 
 
 Save your keys to a password manager and close out the terminal window. 
 
