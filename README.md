@@ -12,12 +12,6 @@ These scripts were created using Python version 3.11.2 but any version of Python
 
 `pip install -r requirements.txt`
 
-3. Create and populate your .env file
-
-`cp sample.env .env`
-
-Open `.env` file and update the variable values as necessary. 
-
 ## Generate Keys, Register User ID, & Authenticate with Space & Time 
 
 ### 1. Generate Keys 
@@ -60,7 +54,11 @@ To register a new SxT user id through the API you will need three things:
 2. SxT API URL 
 3. Join/Org Code
 
-Make sure those values are in your `.env`. 
+Next we will add those values to a .env file: 
+
+`cp sample.env .env`
+
+Update the your new `.env` file with the appropriate values accordingly. 
 
 The `register-authenticate.py` script is meant to demonstrate a few basic workflows. 
 
@@ -91,30 +89,4 @@ INFO:root:Time to authenticate!
 INFO:root:Authenticaiton to the SxT API has been completed successfully!
 Access token: eyJ0eXBlIjoiYWNjZXNzIiwia2lkIjoiZTUxNDVkYmQtZGNmYi00ZjI4L...
 ```
-### 3. Run a Query
 
-[docs.spaceandtime.io/reference/execute-queries-dql](https://docs.spaceandtime.io/reference/execute-queries-dql)
-
-Running a query against the public data in SxT is easy. For this example, we'll use the [query.py](./query.py) script. 
-
-To access public SxT data, you only need to supply your `access_token`.  Optionally, you can also include a biscuit as a second argument if you want to query a table that requires biscuit authorization. 
-
-In this case, we've set an environment variable for our `access_token` like:
-
-`export AT="eyJ0eXBlIjoiYWNjZXNz..."`
-
-So that we can simply run: 
-
-```bash 
-python query.py $AT
-```
-
-### 4. Create a table 
-
-[https://docs.spaceandtime.io/reference/configure-resources-ddl](https://docs.spaceandtime.io/reference/configure-resources-ddl)
-
-This is a primitive example of creating a table. Please note, this assumes that you've already created a SCHEMA to put your table in. It's also worth noting, that two new variables have been added to `.env` for this request: `BISCUIT` and `BISCUIT_PUBLIC_KEY`. 
-
-```bash
-python create.py $AT
-```
