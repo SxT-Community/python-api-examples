@@ -17,31 +17,23 @@ These scripts were created using Python version 3.11.2 but any version of Python
 ### 1. Generate Keys 
 Platform authentication (i.e. proving your identity) is based on public key cryptography, meaning you need a pair of public/private keys. 
 
-While Space and Time supports multiple different key algorithms, we're going to keep it simple and focus on two:
+While Space and Time supports multiple different key algorithms, we're going to keep it simple and focus on one:
 
 - ed25519
-- secp256k1 (Ethereum Accounts/Wallets)
 
 > **Note** 
 > Please see the [key algorithms section](https://docs.spaceandtime.io/docs/register-and-authenticate#key-algorithms) for more details. 
 
-To create key pairs using both algorithms simply execute the script:
+To create an Ed25519 key pair using simply execute the script:
 
-`python generate-keys.py`
+`python generate-Ed25519-keys.py`
 
 Output:
 
-```shell
-Ethereum based keypair:
-private key: 0xYOUR_PRIVATE_KEY_HERE
-public key: 0xYOUR_PUBLIC_KEY_HERE
-
-ed25519 based keypair:
-private key: YOUR_PRIVATE_KEY_HERE=
-public key: YOUR_PUBLIC_KEY_HERE=
+```shell                                                                  
+Private Key (Base64): ......mufxZz6tyYj5stuwLcEd0=
+Public Key (Base64): .......iR/AeJpt2F54JsNdjaJujg=
 ```
-
-You only need to select one keypair and we currently recommend using ed25519. You can always add more keys to your account but for now, we'll just need one pair. 
 
 Save your keys to a password manager and close out the terminal window. 
 
@@ -64,7 +56,7 @@ The `register-authenticate.py` script is meant to demonstrate a few basic workfl
 
 1. It will check if the user_id supplied exists
 2. If it does exist, it will authenticate and return your `access_token` 
-2. If not, it will register the user_id, authenticate, and return your `access_token`
+3. If not, it will register the user_id, authenticate, and return your `access_token`
 
 `python register-authenticate.py <user_id>`
 
@@ -90,3 +82,30 @@ INFO:root:Authenticaiton to the SxT API has been completed successfully!
 Access token: eyJ0eXBlIjoiYWNjZXNzIiwia2lkIjoiZTUxNDVkYmQtZGNmYi00ZjI4L...
 ```
 
+### 3. Run a Query
+
+[docs.spaceandtime.io/reference/execute-queries-dql](https://docs.spaceandtime.io/reference/execute-queries-dql)
+
+Running a query against the public data in SxT is easy. For this example, we'll use the [query.py](./query.py) script. 
+
+To access public SxT data, you only need to supply your `access_token`.  Optionally, you can also include a biscuit as a second argument if you want to query a table that requires biscuit authorization. 
+
+In this case, we've set an environment variable for our `access_token` like:
+
+`export AT="eyJ0eXBlIjoiYWNjZXNz..."`
+
+So that we can simply run: 
+
+```bash 
+python query.py $AT
+```
+
+### 4. Create a table 
+
+[https://docs.spaceandtime.io/reference/configure-resources-ddl](https://docs.spaceandtime.io/reference/configure-resources-ddl)
+
+This is a primitive example of creating a table. Please note, this assumes that you've already created a SCHEMA to put your table in. It's also worth noting, that two new variables have been added to `.env` for this request: `BISCUIT` and `BISCUIT_PUBLIC_KEY`. 
+
+```bash
+python create.py $AT
+```
