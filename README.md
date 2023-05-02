@@ -1,12 +1,15 @@
 # Example of using Python to interact with the Space and Time API 
 
-> **Note**
-> As of this writing the SxT API is accessible through the [Controlled Release](https://docs.spaceandtime.io/docs/controlled-release) program. In order to interact with our API, you will need an org/join code and the API URL which can be obtained though the link above. 
+> **[SxT Beta]**
+> As of this writing the SxT API is accessible in [beta](https://www.spaceandtime.io/access-beta). In order to interact with our API, you will need an API URL which can be obtained though the link above. 
+
+> [**SxT PY Examples Notebook**]
+> You can find a limited example of the code in this repository in this [Colab Notebook](https://github.com/SxT-Community/python-api-examples/blob/main/sxt_python_api_examples.ipynb). 
 
 ## Setup & Config
 1. Setup Python
 
-These scripts were created using Python version 3.11.2 but any version of Python 3 should work. If you're using Pyenv, you can create a virtualenv named: `api-test-3.11.2` and it will automatically invoke correct python virtual env.  
+These scripts were created using Python version 3.11.2 but any version of Python 3 should work. If you're using Pyenv, you can create a virtualenv named: `api-test-3.11.2` and it will automatically invoke the correct python virtual env.  
 
 2. Install Dependencies: 
 

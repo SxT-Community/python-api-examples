@@ -75,10 +75,17 @@ def authenticate():
 # https://docs.spaceandtime.io/reference/authentication-code
 def request_auth_code():
     url = api_url + "auth/code"
+    
+    payload = {
+        "userId": user_id
+    }
+
+    """ joinCode is now optional with SxT Beta Release. If supplied it will connect your account to the relevant subscription
     payload = {
         "userId": user_id,
         "joinCode": org_code
-    }
+    }"""
+
     resp = requests.post(url, json=payload, headers=headers)
    
     jsonResponse = resp.json()
