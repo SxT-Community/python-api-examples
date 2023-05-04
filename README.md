@@ -9,7 +9,7 @@
 ## Setup & Config
 1. Setup Python
 
-These scripts were created using Python version 3.11.2 but any version of Python 3 should work. If you're using Pyenv, you can create a virtualenv named: `api-test-3.11.2` and it will automatically invoke the correct python virtual env.  
+These scripts were created using Python version 3.11.2 but any version of Python < 3.6 should work. If you're using Pyenv, you can create a virtualenv named: `api-test-3.11.2` and it will automatically invoke the correct python virtual env.  
 
 2. Install Dependencies: 
 
