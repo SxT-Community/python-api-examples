@@ -4,7 +4,8 @@
 > As of this writing the SxT API is accessible in [beta](https://www.spaceandtime.io/access-beta). In order to interact with our API, you will need an API URL which can be obtained though the link above. Also, please be aware new accounts will only get a limited number of API queries before a subscription is required. 
 
 > [**SxT PY Examples Notebook**]
-> You can find a limited example of the code in this repository in this [Colab Notebook](https://github.com/SxT-Community/python-api-examples/blob/main/sxt_python_api_examples.ipynb). 
+> You can find a limited example of the code in this repository in this [Colab 
+Notebook](https://github.com/SxT-Community/python-api-examples/blob/main/sxt_python_api_examples.ipynb). 
 
 ## Setup & Config
 1. Setup Python
